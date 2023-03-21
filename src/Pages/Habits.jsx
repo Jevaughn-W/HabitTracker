@@ -121,13 +121,7 @@ export default function HabitPageLayout(props) {
       rowSpacing={2}
       columnSpacing={3}
       sx={{
-        pt: 12,
-        paddingLeft: 25,
-        paddingRight: 25,
-        pb: 20,
-        backgroundImage: `url(${TextureBG})`,
-        backgroundSize: "cover",
-        height: "100%",
+        pt: 12
       }}
     >
       <ButtonAppBar />
