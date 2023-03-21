@@ -177,8 +177,10 @@ export default function HabitPageLayout(props) {
         </Item>
       </Grid>
 
-      <Grid container spacing={10} sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2} width={"100%"}>
         <Grid xs={6}>
+          <Item>
+
           {editMode === false && (
             <HabitCard
               state={state}
@@ -194,6 +196,7 @@ export default function HabitPageLayout(props) {
               setState={setState}
             />
           )}
+          </Item>
         </Grid>
         <Grid>
           <Item>
