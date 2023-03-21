@@ -56,12 +56,7 @@ export default function UserLandingPage(props) {
         rowSpacing={2}
         columnSpacing={3}
         sx={{
-          pt: 12,
-          paddingLeft: 25,
-          paddingRight: 25,
-          pb: 20,
-          backgroundImage: `url(${TextureBG})`,
-          backgroundSize: "cover",
+          pt: 12
         }}
       >
         <Grid item xs={2}>
