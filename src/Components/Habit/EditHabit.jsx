@@ -17,7 +17,10 @@ export default function EditHabit(props) {
 
   const userid = auth.userId;
 
-  const textStyle = { margin: "8px 0px" };
+  const textStyle = { margin: "8px 0px", width: "100%" };
+  const dateTimeStyle = { width: "12rem", margin: "8px 0px"};
+  const dayStyle = {width: "8rem"};
+  const buttons ={ width: "6rem", margin: "8px 0px"};
 
   const handleClick = () => {
     props.setEditMode(false);
@@ -117,7 +120,7 @@ export default function EditHabit(props) {
         />
 
         <Grid container justifyContent="space-between" alignItems="center">
-          <DaysToggleButtons setHabit={setHabit} days={habit.days} />
+          <DaysToggleButtons setHabit={setHabit} days={habit.days} style={dayStyle} />
         </Grid>
 
         <Grid
@@ -125,13 +128,13 @@ export default function EditHabit(props) {
           direction="row"
           justifyContent="space-between"
           alignItems="center"
-          xs={6.5}
+          xs={12}
         >
           <Grid item container direction="column" alignItems="center">
             <TextField
               id="outlined-basic"
               variant="outlined"
-              style={textStyle}
+              style={dateTimeStyle}
               type="date"
               name="start_date"
               value={habit.start_date}
@@ -142,7 +145,7 @@ export default function EditHabit(props) {
             <TextField
               id="outlined-basic"
               variant="outlined"
-              style={textStyle}
+              style={dateTimeStyle}
               type="date"
               name="end_date"
               value={habit.end_date}
@@ -153,7 +156,7 @@ export default function EditHabit(props) {
             <TextField
               id="outlined-basic"
               variant="outlined"
-              style={textStyle}
+              style={dateTimeStyle}
               type="time"
               name="start_time"
               value={habit.start_time}
@@ -164,7 +167,7 @@ export default function EditHabit(props) {
             <TextField
               id="outlined-basic"
               variant="outlined"
-              style={textStyle}
+              style={dateTimeStyle}
               type="time"
               name="end_time"
               value={habit.end_time}
@@ -194,7 +197,7 @@ export default function EditHabit(props) {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Button onClick={handleClick} color="error" variant="contained">
+          <Button onClick={handleClick} color="error" variant="contained" style={buttons}>
             Cancel
           </Button>
           <Button
@@ -202,6 +205,7 @@ export default function EditHabit(props) {
             type="submit"
             color="primary"
             variant="contained"
+            style={buttons}
           >
             Save
           </Button>
