@@ -13,8 +13,8 @@ import RadialBar from "../Components/Gauge/StrokedGauge";
 import "@toast-ui/chart/dist/toastui-chart.min.css";
 import { BarChart, LineChart } from "@toast-ui/react-chart";
 import EditHabit from "../Components/Habit/EditHabit";
-import TextureBG from "../Images/TextureBG.jpg";
 import useAuth from "../hooks/useAuth";
+import { maxHeight } from "@mui/system";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -83,8 +83,8 @@ export default function HabitPageLayout(props) {
 
   const options = {
     chart: {
-      width: 790,
-      height: 495,
+      width: 635,
+      height: 400,
       title:
         selectedValue === "Line"
           ? "Amount of Habits Completed per Month"
@@ -96,6 +96,9 @@ export default function HabitPageLayout(props) {
     xAxis: {
       title: selectedValue === "Line" ? "Month" : "Amount",
     },
+    exportMenu: {
+      visible: false
+    }
   };
 
   const handleChange = (event) => {
@@ -174,8 +177,8 @@ export default function HabitPageLayout(props) {
         </Item>
       </Grid>
 
-      <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-        <Grid xs={5}>
+      <Grid container spacing={10} sx={{ flexGrow: 1 }}>
+        <Grid xs={6}>
           {editMode === false && (
             <HabitCard
               state={state}

@@ -72,13 +72,14 @@ export default function VerticalTabs(props) {
   })
 
   return (
-    <Card>
+    <Card sx={{width:738}}>
       <Box
         sx={{
           flexGrow: 1,
           bgcolor: "background.paper",
           display: "flex",
           height: 421,
+          width: 700
         }}
       >
         <Tabs

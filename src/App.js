@@ -10,7 +10,6 @@ import PersistLogin from "./Components/PersistLogin";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import HomeLandingPage from "./Pages/HomeLandingPage";
-import useApplicationData from "./hooks/useApplicationData";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
