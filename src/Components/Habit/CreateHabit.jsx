@@ -206,7 +206,7 @@ export default function CreateHabit(props) {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Button onClick={handleClick} color="error" variant="contained">
+          <Button onClick={handleClick} color="error" variant="contained" style={{width: "6em", margin: "8px 0px"}}>
             Cancel
           </Button>
           <Button
@@ -214,6 +214,7 @@ export default function CreateHabit(props) {
             type="submit"
             color="primary"
             variant="contained"
+            style={{width: "6em", margin: "8px 0px"}}
           >
             Save
           </Button>
