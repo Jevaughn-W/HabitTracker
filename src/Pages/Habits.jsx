@@ -83,8 +83,8 @@ export default function HabitPageLayout(props) {
 
   const options = {
     chart: {
-      width: 1220,
-      height: 517,
+      width: 790,
+      height: 495,
       title:
         selectedValue === "Line"
           ? "Amount of Habits Completed per Month"
@@ -192,10 +192,10 @@ export default function HabitPageLayout(props) {
             />
           )}
         </Grid>
-        <Grid xs={7}>
-          {/* <Item style={{maxHeight: "500px", backgroundColor: "inherit"}}> */}
+        <Grid>
+          <Item>
           {showChartPeriod()}
-          {/* </Item> */}
+          </Item>
         </Grid>
       </Grid>
       <Grid container spacing={2} width={"100%"}>
