@@ -57,7 +57,6 @@ export default function AppBarMenuButton() {
       >
         <MenuItem onClick={navHabitInfo}>Why Track Habits?</MenuItem>
         <MenuItem onClick={navAboutUs}>About us</MenuItem>
-        <MenuItem onClick={signOut}>Logout</MenuItem>
       </Menu>
     </div>
   );
