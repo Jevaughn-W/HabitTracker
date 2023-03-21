@@ -56,13 +56,6 @@ export default function VerticalTabs(props) {
     return (<Tab key={index} label={habit.title} {...a11yProps(index)} />)
   });
 
-  let eventTabs = props.state.calendarEvents.filter((event) => {
-    //Only show events that match the currently selected habit
-    return event.habit_id === props.state.habits[value]?.id;
-  }).map((event, index) => {
-    return (<Tab sx={{fontSize: 12 }} key={index} label={`${event.title} ${shortenString(event.start)}`} {...a11yProps(index)} />)
-  });
-
   let tabpanels = props.state.habits.map((habit, index) => {
     return (
       <TabPanel key={index} value={value} index={index}>
@@ -93,16 +86,7 @@ export default function VerticalTabs(props) {
           {tabs}
         </Tabs>
         {tabpanels}
-        <Tabs
-          orientation="vertical"
-          variant="scrollable"
-          value={eventValue}
-          onChange={handleEventChange}
-          aria-label="Vertical tabs example"
-          sx={{ borderLeft: 1, borderColor: 'divider' }}
-        >
-          {eventTabs}
-        </Tabs>
+       
       </Box>
     </Card>
   );
