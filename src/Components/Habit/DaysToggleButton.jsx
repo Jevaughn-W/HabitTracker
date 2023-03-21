@@ -30,7 +30,7 @@ export default function DaysToggleButtons(props) {
 
   const eachDayButton = daysArray.map((day, index) => {
     return (
-      <ToggleButton value={day} key={index}>
+      <ToggleButton value={day} key={index} sx={{width:"7.1rem"}}>
         <Typography> {day} </Typography>
       </ToggleButton>
     );
