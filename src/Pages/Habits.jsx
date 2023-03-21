@@ -10,11 +10,10 @@ import {
   IncompleteHabitList,
 } from "../Components/Habit/HabitStatusList";
 import RadialBar from "../Components/Gauge/StrokedGauge";
-import "@toast-ui/chart/dist/toastui-chart.min.css";
-import { BarChart, LineChart } from "@toast-ui/react-chart";
 import EditHabit from "../Components/Habit/EditHabit";
 import useAuth from "../hooks/useAuth";
-import { maxHeight } from "@mui/system";
+import { flexbox, maxHeight } from "@mui/system";
+import HabitChart from "../Components/Habit/HabitChart";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -22,6 +21,14 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.secondary,
+}));
+const HabitContainer = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+  height: "465px"
 }));
 const Dashboard = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -43,80 +50,17 @@ export default function HabitPageLayout(props) {
   // let exerciseCompletedEvents = Number(state.eventsCount.filter((event) => event.completed)[1].event_count)
   // let shootingCompletedEvents = Number(state.eventsCount.filter((event) => event.completed)[2].event_count)
 
-  const dataBarChart = {
-    categories: ["January", "Februay", "March"],
-    series: [
-      {
-        name: "Coding",
-        data: [4, 5, 7],
-      },
-      {
-        name: "Shooting",
-        data: [8, 3, 8],
-      },
-      {
-        name: "Exercise",
-        data: [5, 6, 6],
-      },
-    ],
-  };
-
-  const dataLineChart = {
-    categories: ["January", "Februay", "March"],
-    series: [
-      {
-        name: "Coding",
-        data: [4, 5, 7],
-      },
-      {
-        name: "Shooting",
-        data: [8, 3, 8],
-      },
-      {
-        name: "Exercise",
-        data: [5, 6, 6],
-      },
-    ],
-  };
-
-  const [selectedValue, setSelectedValue] = React.useState("Line");
-
-  const options = {
-    chart: {
-      width: 635,
-      height: 400,
-      title:
-        selectedValue === "Line"
-          ? "Amount of Habits Completed per Month"
-          : "Amount of Habits Completed per Month",
-    },
-    yAxis: {
-      title: selectedValue === "Line" ? "Amount" : "Month",
-    },
-    xAxis: {
-      title: selectedValue === "Line" ? "Month" : "Amount",
-    },
-    exportMenu: {
-      visible: false
-    }
-  };
-
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
-
-  const showChartPeriod = () => {
-    if (selectedValue === "Line") {
-      return <LineChart data={dataLineChart} options={options} />;
-    }
-    return <BarChart data={dataBarChart} options={options} />;
-  };
+  const [selectedValue, setSelectedValue] = useState("Line");
 
   const [editMode, setEditMode] = useState(false);
 
   const { auth } = useAuth();
 
   let user = auth.user;
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
 
   return (
     <Grid
@@ -128,14 +72,11 @@ export default function HabitPageLayout(props) {
       }}
     >
       <ButtonAppBar />
-      <Grid xs={10}>
+      <Grid  xs={10}>
         <Typography variant="h4">{user} Habits</Typography>
       </Grid>
       <Grid xs={2}>
         <Item>
-          <FormLabel id="demo-row-radio-buttons-group-label">
-            Select Chart Type
-          </FormLabel>
           <FormControlLabel
             value="start"
             control={
@@ -161,7 +102,7 @@ export default function HabitPageLayout(props) {
               <Radio
                 checked={selectedValue === "b"}
                 onChange={handleChange}
-                value="b"
+                value="Bar"
                 name="radio-buttons"
                 inputProps={{ "aria-label": "B" }}
                 sx={{
@@ -177,9 +118,9 @@ export default function HabitPageLayout(props) {
         </Item>
       </Grid>
 
-      <Grid container spacing={2} width={"100%"}>
-        <Grid xs={6}>
-          <Item>
+      <Grid container spacing={2} width={"100%"} sx={{display: flexbox, justifyContent: "space-evenly"}}>
+        <Grid xs={7}>
+          <HabitContainer>
 
           {editMode === false && (
             <HabitCard
@@ -196,12 +137,12 @@ export default function HabitPageLayout(props) {
               setState={setState}
             />
           )}
-          </Item>
+          </HabitContainer>
         </Grid>
         <Grid>
-          <Item>
-          {showChartPeriod()}
-          </Item>
+          <HabitContainer xs={5}>
+            <HabitChart selectedValue={selectedValue}/>
+          </HabitContainer>
         </Grid>
       </Grid>
       <Grid container spacing={2} width={"100%"}>
