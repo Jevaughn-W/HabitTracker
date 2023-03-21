@@ -44,7 +44,7 @@ export default function HabitChart(props) {
   const options = {
     chart: {
       width: 550,
-      height: 400,
+      height: 450,
       title:
         props.selectedValue === "Line"
           ? "Amount of Habits Completed per Month"
