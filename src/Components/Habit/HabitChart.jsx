@@ -58,6 +58,9 @@ export default function HabitChart(props) {
     },
     exportMenu: {
       visible: false
+    },
+    legend: {
+      align: 'bottom'
     }
   };
 
