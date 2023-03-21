@@ -109,7 +109,7 @@ export default function UserLandingPage(props) {
           </Item>
         </Grid>
         <Grid item xs={2}>
-          <Item style={{ maxheight: "450px" }}>
+          <Item style={{ maxheight: "450px", marginBottom:"2em" }}>
             <Typography>Active Habits</Typography>
             <HabitList
               date={date}
