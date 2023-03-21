@@ -78,7 +78,7 @@ export default function VerticalTabs(props) {
           flexGrow: 1,
           bgcolor: "background.paper",
           display: "flex",
-          height: 515,
+          height: 421,
         }}
       >
         <Tabs
