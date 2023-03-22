@@ -73,7 +73,7 @@ export default function HabitPageLayout(props) {
     >
       <ButtonAppBar />
       <Grid  xs={10}>
-        <Typography variant="h4">{user} Habits</Typography>
+        <Typography variant="h3" sx={{color:"#1976d2", borderBottom: "4mm ridge rgba(25, 118, 210, .6)"}}>{user} Habits</Typography>
       </Grid>
       <Grid xs={2}>
         <Item sx={{marginRight: "15px"}}>
