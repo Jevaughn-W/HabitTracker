@@ -22,7 +22,6 @@ export default function HabitTabPanel(props) {
   const rootStyles = {
     width: '40rem',
     height: '400px',
-    padding: '16px',
     backgroundColor: '#fff',
     display:'flex',
     justifyContent:'space-between',
@@ -60,23 +59,22 @@ export default function HabitTabPanel(props) {
   return (
     <Grid container direction="column" style={rootStyles}>
       <Grid item>
-        <Typography variant="h4" sx={{ borderRadius:"5px", display:"flex", backgroundColor:"#1976d2", color:"white", marginBottom:"10px" }}>{props.habit.title}</Typography>
+        <Typography variant="h3" sx={{ borderRadius:"5px", display:"flex", backgroundColor:"#1976d2", color:"white", marginBottom:"10px", paddingLeft:"5px" }}>{props.habit.title}</Typography>
       </Grid>
       <Grid item>
-        <Typography variant="h5" sx={{ borderRadius:"5px", display:"flex", color:"#1976d2"}}>Description</Typography>
-        <Typography variant="body1" sx={{border:"solid", borderRadius:"5px", minHeight:"50px", display:"flex", flexDirection:"Column", justifyContent:"center", marginBottom:"5px" }}>{props.habit.body}</Typography>
+        <Typography variant="h6" sx={{ borderRadius:"5px", display:"flex", color:"#1976d2"}}>Description</Typography>
+        <Typography variant="body1" sx={{border:"solid", borderRadius:"5px", minHeight:"150px", display:"flex", flexDirection:"column", justifyContent:"center", marginBottom:"5px" }}>{props.habit.body}.</Typography>
       </Grid>
-      <Grid item>
-        <Typography variant="h5" sx={{ borderRadius:"5px", display:"flex", color:"#1976d2"}}>Date Range</Typography>
-        <Typography variant="body1" sx={{border:"solid", borderRadius:"5px", minHeight:"50px", display:"flex", flexDirection:"Column", justifyContent:"center" }}>
-          Start: {props.habit.start_date} End: {props.habit.end_date}
-        </Typography>
-      </Grid>
-      <Grid item>
-        <Typography variant="h5" sx={{ borderRadius:"5px", display:"flex", color:"#1976d2"}}>Time</Typography>
-        <Typography variant="body1" sx={{border:"solid", borderRadius:"5px", minHeight:"50px", display:"flex", flexDirection:"Column", justifyContent:"center" }}>
-          Start: {props.habit.start_time} ; End: {props.habit.end_time}
-        </Typography>
+      <Grid>
+        <Typography variant="h6" sx={{ borderRadius:"5px", display:"flex", color:"#1976d2"}}>Habit Details</Typography>
+        <Grid container sx={{display:"flex", justifyContent:"space-between"}}>
+          <Typography xs={6} variant="body1" sx={{minHeight:"50px", display:"flex", flexDirection:"Column", justifyContent:"center" }}>
+            Date Range: {props.habit.start_date} - {props.habit.end_date}
+          </Typography>
+          <Typography variant="body1" sx={{minHeight:"50px", display:"flex", flexDirection:"Column", justifyContent:"center" }}>
+            Event Time: {props.habit.start_time} - {props.habit.end_time}
+          </Typography>
+        </Grid>
       </Grid>
       <Grid item style={buttonContainerStyles}>
         <Button onClick={editHabit} style={editButtonStyles} variant="text">
