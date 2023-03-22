@@ -62,11 +62,11 @@ export default function HabitTabPanel(props) {
         <Typography variant="h3" sx={{ borderRadius:"5px", display:"flex", backgroundColor:"#1976d2", color:"white", marginBottom:"10px", paddingLeft:"5px" }}>{props.habit.title}</Typography>
       </Grid>
       <Grid item>
-        <Typography variant="h6" sx={{ borderRadius:"5px", display:"flex", color:"#1976d2"}}>Description</Typography>
+        <Typography variant="h6" sx={{display:"flex", color:"#1976d2"}}>Description</Typography>
         <Typography variant="body1" sx={{border:"solid", borderRadius:"5px", minHeight:"150px", display:"flex", flexDirection:"column", justifyContent:"center", marginBottom:"5px" }}>{props.habit.body}.</Typography>
       </Grid>
       <Grid>
-        <Typography variant="h6" sx={{ borderRadius:"5px", display:"flex", color:"#1976d2"}}>Habit Details</Typography>
+        <Typography variant="h6" sx={{display:"flex", color:"#1976d2"}}>Habit Details</Typography>
         <Grid container sx={{display:"flex", justifyContent:"space-between"}}>
           <Typography xs={6} variant="body1" sx={{minHeight:"50px", display:"flex", flexDirection:"Column", justifyContent:"center" }}>
             Date Range: {props.habit.start_date} - {props.habit.end_date}
