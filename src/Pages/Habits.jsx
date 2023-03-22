@@ -76,7 +76,7 @@ export default function HabitPageLayout(props) {
         <Typography variant="h4">{user} Habits</Typography>
       </Grid>
       <Grid xs={2}>
-        <Item>
+        <Item sx={{marginRight: "15px"}}>
           <FormControlLabel
             value="start"
             control={
