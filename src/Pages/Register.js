@@ -163,7 +163,7 @@ export default function Register(props) {
   const paperStyle = {
     padding: 20,
     height: "auto",
-    width: "50vh",
+    width: "70vh",
   };
 
   const avatarStyle = { backgroundColor: "#007bff" };
@@ -173,8 +173,8 @@ export default function Register(props) {
   const buttonStyles = {
     backgroundColor: "#ccc",
     borderRadius: "50%",
-    width: "50px",
     height: "50px",
+    width:"50px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -270,7 +270,7 @@ export default function Register(props) {
               }}
             ></Paper>
             <Paper elevation={10} style={paperStyle}>
-              <Grid align="center">
+              <Grid align="center" sx={{minWidth:"500px"}}>
                 <Avatar style={avatarStyle}>
                   <LockOutlinedIcon />
                 </Avatar>
@@ -483,6 +483,7 @@ export default function Register(props) {
                     disabled={
                       !validName || !validPwd || !validMatch ? true : false
                     }
+                    sx={{width:"95%"}}
                   >
                     Register
                   </Button>
