@@ -20,6 +20,7 @@ export default function CreateHabit(props) {
   const userid = auth.userId;
 
   const textStyle = { margin: "8px 0px" };
+  const timeDateStyle = { margin: "8px 0px", width: "150px" };
 
   const handleClick = () => {
     props.setMode("SHOWING");
@@ -101,7 +102,7 @@ export default function CreateHabit(props) {
 
   return (
     <>
-      <Typography variant="h3"> Create your Habit</Typography>
+      <Typography variant="h3" sx={{display:"flex", justifyContent:"center", color:"#1976d2"}}> Create your Habit</Typography>
       <FormGroup>
         <TextField
           id="outlined-basic"
@@ -143,7 +144,7 @@ export default function CreateHabit(props) {
             <TextField
               id="outlined-basic"
               variant="outlined"
-              style={textStyle}
+              style={timeDateStyle}
               type="date"
               name="start_date"
               value={habit.start_date}
@@ -154,7 +155,7 @@ export default function CreateHabit(props) {
             <TextField
               id="outlined-basic"
               variant="outlined"
-              style={textStyle}
+              style={timeDateStyle}
               type="date"
               name="end_date"
               value={habit.end_date}
@@ -165,7 +166,7 @@ export default function CreateHabit(props) {
             <TextField
               id="outlined-basic"
               variant="outlined"
-              style={textStyle}
+              style={timeDateStyle}
               type="time"
               name="start_time"
               value={habit.start_time}
@@ -176,7 +177,7 @@ export default function CreateHabit(props) {
             <TextField
               id="outlined-basic"
               variant="outlined"
-              style={textStyle}
+              style={timeDateStyle}
               type="time"
               name="end_time"
               value={habit.end_time}

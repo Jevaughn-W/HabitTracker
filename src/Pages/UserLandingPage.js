@@ -110,7 +110,7 @@ export default function UserLandingPage(props) {
         </Grid>
         <Grid item xs={2}>
           <Item style={{ maxheight: "450px", marginBottom:"2em" }}>
-            <Typography>Active Habits</Typography>
+            <Typography sx={{display:"flex", justifyContent:"center", color:"#1976d2"}}>Active Habits</Typography>
             <HabitList
               date={date}
               upcoming={true}
@@ -119,7 +119,7 @@ export default function UserLandingPage(props) {
             />
           </Item>
           <Item style={{ maxheight: "450px" }}>
-            <Typography>Inactive Habits</Typography>
+            <Typography sx={{display:"flex", justifyContent:"center", color:"#1976d2"}}>Inactive Habits</Typography>
             <HabitList
               date={date}
               upcoming={false}
