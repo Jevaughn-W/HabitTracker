@@ -60,7 +60,7 @@ export default function UserLandingPage(props) {
         }}
       >
         <Grid item xs={2}>
-          <Item>{date.toLocaleDateString("en-US", options)}</Item>
+          <Item sx={{display:"flex", borderRadius:"5px" , justifyContent:"center", backgroundColor:"#1976d2", color:"#fff"}}>{date.toLocaleDateString("en-US", options)}</Item>
         </Grid>
         <Grid item xs={2}>
           <AddHabitButton setMode={setMode} />
@@ -110,7 +110,7 @@ export default function UserLandingPage(props) {
         </Grid>
         <Grid item xs={2}>
           <Item style={{ maxheight: "450px", marginBottom:"2em" }}>
-            <Typography sx={{display:"flex", justifyContent:"center", color:"#1976d2"}}>Active Habits</Typography>
+            <Typography sx={{display:"flex", borderRadius:"5px" , justifyContent:"center", backgroundColor:"#1976d2", color:"#fff"}}>Active Habits</Typography>
             <HabitList
               date={date}
               upcoming={true}
@@ -119,7 +119,7 @@ export default function UserLandingPage(props) {
             />
           </Item>
           <Item style={{ maxheight: "450px" }}>
-            <Typography sx={{display:"flex", justifyContent:"center", color:"#1976d2"}}>Inactive Habits</Typography>
+            <Typography sx={{display:"flex", borderRadius:"5px" , justifyContent:"center", backgroundColor:"#1976d2", color:"#fff"}}>Inactive Habits</Typography>
             <HabitList
               date={date}
               upcoming={false}
