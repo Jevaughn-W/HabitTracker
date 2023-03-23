@@ -49,19 +49,22 @@ We've created our own API server to host our data.
 ## Screenshots
 
 ### Application Signup Page
-![Signup Page]()
+![Signup Page](https://github.com/Jevaughn-W/HabitTracker/blob/master/docs/Screenshot%202023-03-22%20at%209.50.17%20PM.png)
 
 ### Application Login Page
-![Login Page]()
+![Login Page](https://github.com/Jevaughn-W/HabitTracker/blob/master/docs/Screenshot%202023-03-22%20at%209.49.23%20PM.png)
 
-### User Landing Page
-![User Landing Page]()
+### User Landing Page (Week)
+![User Landing Page - Week](https://github.com/Jevaughn-W/HabitTracker/blob/master/docs/Screenshot%202023-03-22%20at%209.45.45%20PM.png)
+
+### User Landing Page (Month)
+![User Landing Page - Month](https://github.com/Jevaughn-W/HabitTracker/blob/master/docs/Screenshot%202023-03-22%20at%209.44.09%20PM.png)
 
 ### User Habit Page (Line Graph)
-![User Habit Page - Line Graph]()
+![User Habit Page - Line Graph](https://github.com/Jevaughn-W/HabitTracker/blob/master/docs/Screenshot%202023-03-22%20at%209.44.42%20PM.png)
 
 ### User Habit Page (Bar Graph)
-![User Habit Page - Bar Graph]()
+![User Habit Page - Bar Graph](https://github.com/Jevaughn-W/HabitTracker/blob/master/docs/Screenshot%202023-03-22%20at%209.45.24%20PM.png)
 
 
 
