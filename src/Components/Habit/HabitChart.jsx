@@ -11,11 +11,11 @@ export default function HabitChart(props) {
         data: [4, 5, 7],
       },
       {
-        name: "Shooting",
+        name: "Leap Frogging",
         data: [8, 3, 8],
       },
       {
-        name: "Exercise",
+        name: "Swimming",
         data: [5, 6, 6],
       },
     ],
@@ -29,11 +29,11 @@ export default function HabitChart(props) {
         data: [4, 5, 7],
       },
       {
-        name: "Shooting",
+        name: "Leap Frogging",
         data: [8, 3, 8],
       },
       {
-        name: "Exercise",
+        name: "Swimming",
         data: [5, 6, 6],
       },
     ],
